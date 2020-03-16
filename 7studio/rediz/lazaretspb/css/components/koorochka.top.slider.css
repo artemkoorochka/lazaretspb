@@ -1,0 +1,68 @@
+#matadoor-slider{
+    overflow: hidden;
+    margin: 0 auto;
+    padding:0;
+    z-index: 1;
+    min-height: 326px;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+#matadoor-slider > .row > .col-12 {
+    display: inline-block;
+    float: none;
+}
+
+#matadoor-slider .item{
+    width: 100%;
+}
+
+#matadoor-slider .item:before{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    z-index: 1;
+    /*background-color: rgba(0, 0, 0, .3);*/
+}
+#matadoor-slider .item::after {
+    position: absolute;
+    display: block;
+    z-index: 1;
+    content: '';
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid #fff
+}
+#matadoor-slider .p-absolute {
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+#matadoor-slider .p-absolute .description{
+    flex: 0 0 50%;
+}
+
+/**
+  * Carousel controls
+  */
+#matadoor-slider-top .carousel-controls{
+    position: absolute;
+    z-index: 2;
+    right: 4%;
+    bottom: 57px;
+}
+#matadoor-slider-top .carousel-controls .btn-outline-danger{
+    font-size: 39px;
+    line-height: 36px;
+    padding-top: 0;
+    padding-bottom: 4px;
+}
