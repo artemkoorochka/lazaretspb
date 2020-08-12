@@ -31,28 +31,12 @@ $arParams = [
 
 
 $arResult = [
-    "ARTICLE" => []
+    "ARTICLE" => 2147483647
 ];
 
-$file = File::getFileContents($arParams["FILE"]);
+$arResult["ARTICLE"] = "select * FROM b_studio7spb_izzapoyay_phrases WHERE CODE=" . $arResult["ARTICLE"];
+$arResult["ARTICLE"] = $DB->Query($arResult["ARTICLE"]);
 
-
-$fileItems = [];
-$lines = explode(PHP_EOL, $file);
-foreach ($lines as $line) {
-    $fileItems[] = str_getcsv($line);
-}
-unset($fileItems[0]);
-unset($fileItems[1]);
-
-
-if (empty($fileItems)) {
-
-} else {
-    foreach ($fileItems as $article) {
-        $ID = $DB->Insert("b_studio7spb_izzapoyay_phrases", [
-            "CODE"                  => "'".intval($article[0])."'",
-            "NAME"                    => "'".trim($article[1])."'",
-        ], $err_mess.__LINE__);
-    }
+if($arResult["ARTICLE"] = $arResult["ARTICLE"]->Fetch()){
+    d($arResult);
 }
